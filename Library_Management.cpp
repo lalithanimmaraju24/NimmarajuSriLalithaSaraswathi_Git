@@ -124,7 +124,7 @@ void admin(void)
         {
             case 1: bookmenu();break;
             case 2: usermenu();break;
-            case 3: listbook();break;
+            case 3: booklist();break;
             case 4: listuser();break;
             case 5: issuebook();break;
             case 6: collectbook();break;
@@ -133,7 +133,7 @@ void admin(void)
             default: printf("\n\n\t\t Invalid Choice");
                  getch();
         }
-    }while(1);  
+    }while(1);
 }
 void bookmenu(void)
 {
@@ -231,7 +231,7 @@ void editbook(void)
         scanf("%d",&choice);
         switch(choice)
         {
-            
+
 
         case 1: printf("\n\n\t Enter the new book name : ");
                 scanf(" %[^\n]s",be.name);
@@ -394,7 +394,7 @@ if(uidcheck(id)==1)
 {
 deleteuser(id);
 struct user ue;
-ue=uc;  
+ue=uc;
 l2:
 printf("\n\t Existing User Information : ");
 printf("\n\t 1. UserId : %d \n\t 2. User Name : %s ",ue.id,ue.name);
@@ -481,7 +481,7 @@ void deleteuser(int id)
     }
     return;
 }
-void listbook(void)
+void booklist(void)
 {
     pb=fopen("Books.txt","r");
     system("cls");
@@ -636,7 +636,7 @@ int f;
 do
 {
 do
-{				
+{
 printf("\n\t Enter the date of return (dd-mm-yy) : ");
 scanf("%d-%d-%d",&r.dd,&r.mm,&r.yy);
 if(validdatecheck(r))
@@ -646,7 +646,7 @@ getch();
 }while(1);
 f=fine(r,0);
 if(f>0)
-{	
+{
 printf("\n\t The due date is %d-%d-%d",uc.due.dd,uc.due.mm,uc.due.yy);
 printf("\n\t The fine to be collected is %d",f);
 getch();
@@ -715,7 +715,7 @@ switch(choice)
             case 4: exitcheck();break;
             default: printf("\n\n\t\t Invalid Choice");
                      getch();
-		  }          
+		  }
 }while(1);
 
 }
@@ -788,7 +788,7 @@ printf("\n\t No such user found");
 printf("\n Do you want to search for any other user ? (Y/N)");
 scanf(" %c",&ch);
     }while(ch=='Y'||ch=='y');
-    fclose(pu); 
+    fclose(pu);
     return;
 }
 
