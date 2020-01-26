@@ -124,7 +124,7 @@ void admin(void)
         {
             case 1: bookmenu();break;
             case 2: usermenu();break;
-            case 3: booklist();break;
+            case 3: listbook();break;
             case 4: listuser();break;
             case 5: issuebook();break;
             case 6: collectbook();break;
@@ -481,7 +481,7 @@ void deleteuser(int id)
     }
     return;
 }
-void booklist(void)
+void listbook(void)
 {
     pb=fopen("Books.txt","r");
     system("cls");
